@@ -1,24 +1,18 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { ChartContext } from './context/ChartContext';
+import Chart from './components/chart/Chart'
 
 function App() {
+
+  const [data, setData] = useState([23,23.1,23.2,23.3])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChartContext.Provider value={data}>
+      <div className="App">
+        <Chart/>
+      </div>
+    </ChartContext.Provider>
   );
 }
 
