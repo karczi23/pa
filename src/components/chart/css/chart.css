@@ -1,0 +1,15 @@
+.chartArea {
+    display: flex;
+    justify-content: space-around;
+    width: 30vw;
+    padding: 5px;
+}
+
+.bar {
+    width: auto;
+    height: 100%;
+}
+
+.hoveredBar {
+    width: 3em;
+}
