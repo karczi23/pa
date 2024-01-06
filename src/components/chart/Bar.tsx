@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { SetStateAction } from "react";
-import { getColor } from '../../utils/GradientUtils'
 
 interface BarProps {
     color?: string,
@@ -24,7 +23,7 @@ const Bar: React.FC<BarProps> = (props) => {
     const disableHover = () => setHovered(() => false)
 
     return (
-        <div className={`bar ${isHovered && 'hoveredBar'}`} style={{backgroundColor: props.color || 'grey'}} onMouseEnter={enableHover} onMouseLeave={disableHover}>{props.temperature}</div>
+        <div className={'bar'} style={{backgroundColor: props.color || 'grey'}} onMouseEnter={enableHover} onMouseLeave={disableHover}> </div>
     )
 }
 

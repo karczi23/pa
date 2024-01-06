@@ -15,11 +15,12 @@ const colors = useContext(ColorContext)
 const toggleHover = () => setHovered(prevState => !prevState);
 
 return (
-    <div className='chart' onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+    <div className='chartArea' onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
         {
             isHovered ?
             <div>
-                <div className='chartArea'>
+            {/* <TopDownContainer> */}
+                <div className='chartAreaHovered chartArea'>
                 {
                     data.map((value, index) => 
                         <Bar key={index} setTemperature={setTemperature} temperature={value} color={colors[index]}/>
@@ -28,9 +29,10 @@ return (
                 </div>
                 {temperature && <div>Temperatura: {temperature}</div>}
             </div>
+            // </TopDownContainer>
         
             :
-            <div>niehovered</div>
+            <div className='chartAreaUnhovered chartArea' style={{backgroundImage: `linear-gradient(to right, ${colors.join(',')})`}}>a</div>
         }
     </div>
   )

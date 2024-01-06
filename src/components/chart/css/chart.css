@@ -1,15 +1,23 @@
 .chartArea {
-    display: flex;
-    justify-content: space-around;
     width: 30vw;
+    height: 30vh;
     padding: 20px;
 }
 
-.bar {
-    width: auto;
-    height: 100%;
+.chartAreaHovered {
+    display: flex;
+    justify-content: space-around;
 }
 
-.hoveredBar {
-    width: 3em;
+.bar {
+    margin: 2px;
+    flex-grow: 1;
+    height: 100%;
+    transition: flex-grow 0.2s ease-in-out;
+    transition: margin 0.2s ease-in-out;
+}
+
+.bar:hover {
+    margin: 0;
+    flex-grow: 1.1;
 }
