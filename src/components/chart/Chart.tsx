@@ -3,6 +3,7 @@ import { ChartContext } from '../../context/ChartContext';
 import Bar from './Bar';
 import './css/chart.css'
 import { ColorContext } from '../../context/ColorContext';
+import { ChartTextContainer, Container } from '../structure/Container';
 
 const Chart = (props) => {
 
@@ -15,26 +16,29 @@ const colors = useContext(ColorContext)
 const toggleHover = () => setHovered(prevState => !prevState);
 
 return (
-    <div className='chartArea' onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+    <Container>
+    <div onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
         {
             isHovered ?
             <div>
-            {/* <TopDownContainer> */}
-                <div className='chartAreaHovered chartArea'>
+                <ChartTextContainer/>
+                <div className='chartAreaHovered chartArea border-bottom border-left border-right'>
                 {
                     data.map((value, index) => 
                         <Bar key={index} setTemperature={setTemperature} temperature={value} color={colors[index]}/>
                     )
                 }
                 </div>
-                {temperature && <div>Temperatura: {temperature}</div>}
+                <ChartTextContainer>
+                    {temperature && `Temperatura: ${temperature}°C`}
+                </ChartTextContainer>
             </div>
-            // </TopDownContainer>
         
             :
             <div className='chartAreaUnhovered chartArea' style={{backgroundImage: `linear-gradient(to right, ${colors.join(',')})`}}>a</div>
         }
     </div>
+    </Container>
   )
 }
 
