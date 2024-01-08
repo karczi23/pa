@@ -12,11 +12,17 @@ const Chart = (props) => {
     const data = useContext(ChartContext);
     const colors = useContext(ColorContext);
 
-    const toggleHover = () => setHovered((prevState) => !prevState);
+    const enableHover = () => setHovered(() => true);
+
+    const disableHover = () =>
+        setHovered(() => {
+            setTemperature(null);
+            return false;
+        });
 
     return (
         <Container>
-            <div onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+            <div onMouseEnter={enableHover} onMouseLeave={disableHover}>
                 {isHovered ? (
                     <div>
                         <ChartTextContainer />
