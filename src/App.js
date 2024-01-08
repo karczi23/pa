@@ -6,6 +6,7 @@ import Regulator from './components/input/Regulator';
 import { getColor } from './utils/GradientUtils';
 import { ColorContext } from './context/ColorContext';
 import Parameters from './components/input/Parameters';
+import { GridContainer } from './components/structure/Container';
 
 function App() {
     const [data, setData] = useState([23, 23.1, 23.2, 23.3, 34]);
@@ -19,9 +20,11 @@ function App() {
         <ChartContext.Provider value={data}>
             <ColorContext.Provider value={colors}>
                 <div className="App">
-                    <Chart />
-                    <Regulator />
-                    <Parameters />
+                    <GridContainer>
+                        <Chart />
+                        <Regulator />
+                        <Parameters />
+                    </GridContainer>
                 </div>
             </ColorContext.Provider>
         </ChartContext.Provider>
