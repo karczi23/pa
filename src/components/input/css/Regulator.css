@@ -7,7 +7,7 @@ input[type='range'] {
 input[type='range']:focus {
     outline: none;
 }
-input[type='range']::-webkit-slider-runnable-track {
+.temp::-webkit-slider-runnable-track {
     width: 100%;
     height: 10px;
     cursor: pointer;
@@ -15,6 +15,16 @@ input[type='range']::-webkit-slider-runnable-track {
     box-shadow: 0px 0px 0px #000000;
     background-image: linear-gradient(to right, rgb(0, 255, 0), rgb(255, 255, 0), rgb(255, 0, 0));
     border-radius: 5px;
+    border: 0px solid #000000;
+}
+.param::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #2497e3;
+    border-radius: 1px;
     border: 0px solid #000000;
 }
 input[type='range']::-webkit-slider-thumb {
@@ -28,10 +38,10 @@ input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     margin-top: -10px;
 }
-input[type='range']:focus::-webkit-slider-runnable-track {
+.temp:focus::-webkit-slider-runnable-track {
     background-image: linear-gradient(to right, rgb(0, 255, 0), rgb(255, 255, 0), rgb(255, 0, 0));
 }
-input[type='range']::-moz-range-track {
+.temp::-moz-range-track {
     width: 100%;
     height: 10px;
     cursor: pointer;
@@ -39,6 +49,19 @@ input[type='range']::-moz-range-track {
     box-shadow: 0px 0px 0px #000000;
     background-image: linear-gradient(to right, rgb(0, 255, 0), rgb(255, 255, 0), rgb(255, 0, 0));
     border-radius: 5px;
+    border: 0px solid #000000;
+}
+.param:focus::-webkit-slider-runnable-track {
+    background: #2497e3;
+}
+.param::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #2497e3;
+    border-radius: 1px;
     border: 0px solid #000000;
 }
 input[type='range']::-moz-range-thumb {
@@ -59,14 +82,26 @@ input[type='range']::-ms-track {
     border-color: transparent;
     color: transparent;
 }
-input[type='range']::-ms-fill-lower {
+.temp::-ms-fill-lower {
     background-image: linear-gradient(to right, rgb(0, 255, 0), rgb(255, 255, 0), rgb(255, 0, 0));
     border: 0px solid #000000;
     border-radius: 2px;
     box-shadow: 0px 0px 0px #000000;
 }
-input[type='range']::-ms-fill-upper {
+.temp::-ms-fill-upper {
     background-image: linear-gradient(to right, rgb(0, 255, 0), rgb(255, 255, 0), rgb(255, 0, 0));
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+}
+.param::-ms-fill-lower {
+    background: #2497e3;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+}
+.param::-ms-fill-upper {
+    background: #2497e3;
     border: 0px solid #000000;
     border-radius: 2px;
     box-shadow: 0px 0px 0px #000000;
