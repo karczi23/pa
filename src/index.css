@@ -1,32 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+    --primaryColor: #2497e3;
+    --secondaryColor: #a1d0ff;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+        'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .border-bottom {
-  border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .border-left {
-  border-left: 1px solid black;
+    border-left: 1px solid black;
 }
 
 .border-right {
-  border-right: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .border-radius {
-  border-radius: 0 0 2em 2em;
+    border-radius: 0 0 2em 2em;
 }
