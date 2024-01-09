@@ -6,6 +6,7 @@ import Regulator from './components/input/Regulator';
 import { getColor } from './utils/GradientUtils';
 import { ColorContext } from './context/ColorContext';
 import Parameters from './components/input/Parameters';
+import Timer from './components/input/Timer';
 import { GridContainer } from './components/structure/Container';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                         <Chart />
                         <Regulator />
                         <Parameters />
+                        <Timer />
                     </GridContainer>
                 </div>
             </ColorContext.Provider>

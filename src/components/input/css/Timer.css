@@ -1,0 +1,11 @@
+.timerSubmit {
+    width: 100%;
+    height: 50%;
+    font-family: 'Roboto';
+    background: none;
+    font-size: 2.5rem;
+    border-color: #2497e3;
+    background-color: #a1d0ff;
+    color: #2497e3;
+    margin-top: -50px;
+}
