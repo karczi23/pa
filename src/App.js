@@ -7,10 +7,16 @@ import { getColor } from './utils/GradientUtils';
 import { ColorContext } from './context/ColorContext';
 import Parameters from './components/input/Parameters';
 import Timer from './components/input/Timer';
+import { Header } from './components/structure/Header';
 import { GridContainer } from './components/structure/Container';
 
 function App() {
-    const [data, setData] = useState([23, 23.1, 23.2, 23.3, 34]);
+    const [data, setData] = useState([
+        23, 23.1, 23.2, 23.3, 23.4, 23.5, 23.6, 23.7, 24, 24.2, 23, 23.1, 23.2, 23.3, 23.4, 23.5,
+        23.6, 23.7, 24, 24.2, 23, 23.1, 23.2, 23.3, 23.4, 23.5, 23.6, 23.7, 24, 24.2, 23, 23.1,
+        23.2, 23.3, 23.4, 23.5, 23.6, 23.7, 24, 24.2, 23, 23.1, 23.2, 23.3, 23.4, 23.5, 23.6, 23.7,
+        24, 24.2, 23, 23.1, 23.2, 23.3, 23.4, 23.5, 23.6, 23.7, 24, 24.2,
+    ]);
     const [colors, setColors] = useState([]);
 
     useEffect(() => {
@@ -21,6 +27,7 @@ function App() {
         <ChartContext.Provider value={data}>
             <ColorContext.Provider value={colors}>
                 <div className="App">
+                    <Header>Regulator temperatury w basenie odkrytym</Header>
                     <GridContainer>
                         <Chart />
                         <Regulator />
