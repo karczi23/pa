@@ -14,11 +14,11 @@ const Container = styled.div`
     place-self: center;
 `;
 
-const TopDownContainer = styled.div<{ alignment?: string; allSpace?: boolean }>`
+const TopDownContainer = styled.div<{ alignment?: string; height?: string }>`
     display: flex;
     flex-direction: column;
     justify-content: ${(props) => (props.alignment ? props.alignment : 'space-around')};
-    height: ${(props) => (props.allSpace ? '100%' : 'auto')};
+    height: ${(props) => (props.height ? props.height : 'auto')};
 `;
 
 const ChartTextContainer = styled.div`
@@ -36,7 +36,7 @@ const GridContainer = styled.div`
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
     }

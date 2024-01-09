@@ -8,7 +8,7 @@ const Regulator = (props) => {
 
     return (
         <Container>
-            <TopDownContainer allSpace>
+            <TopDownContainer height="100%">
                 <TitleText>Oczekiwana temperatura wody:</TitleText>
                 <TopDownContainer alignment="center">
                     <RangeInput

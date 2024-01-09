@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, TitleText, TopDownContainer } from '../structure/Container';
 import RangeInput from './RangeInput';
+import MonthSelect from './MonthSelect';
 
 const Parameters = (props) => {
     const [capacity, setCapacity] = useState('5000');
@@ -9,9 +10,10 @@ const Parameters = (props) => {
 
     return (
         <Container>
-            <TopDownContainer allSpace>
+            <TopDownContainer height="100%" style={{ width: '60%' }}>
                 <TitleText>Parametry</TitleText>
-                <TopDownContainer alignment="center">
+                <TopDownContainer alignment="space-around" height="80%">
+                    <MonthSelect />
                     <RangeInput
                         className={'capacity param'}
                         min={1000}
