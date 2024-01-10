@@ -26,6 +26,12 @@ const ChartTextContainer = styled.div`
     height: 1em;
 `;
 
+const ChartLegendContainer = styled.div<{ textAlignment: string }>`
+    width: 50%;
+    height: 1em;
+    text-align: ${(props) => props.textAlignment};
+`;
+
 const TitleText = styled.div`
     font-size: 1.5rem;
 `;
@@ -42,4 +48,11 @@ const GridContainer = styled.div`
     }
 `;
 
-export { Container, TopDownContainer, ChartTextContainer, TitleText, GridContainer };
+export {
+    Container,
+    TopDownContainer,
+    ChartTextContainer,
+    TitleText,
+    GridContainer,
+    ChartLegendContainer,
+};

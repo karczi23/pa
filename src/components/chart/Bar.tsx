@@ -5,6 +5,8 @@ interface BarProps {
     color?: string;
     temperature: number;
     setTemperature: React.Dispatch<SetStateAction<number>>;
+    setPosition: React.Dispatch<SetStateAction<number>>;
+    position: number;
 }
 
 const Bar: React.FC<BarProps> = (props) => {
@@ -13,6 +15,7 @@ const Bar: React.FC<BarProps> = (props) => {
     useEffect(() => {
         if (isHovered) {
             props.setTemperature(props.temperature);
+            props.setPosition(59 - props.position);
         }
     }, [isHovered]);
 
