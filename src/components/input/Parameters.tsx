@@ -1,19 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, TitleText, TopDownContainer } from '../structure/Container';
 import RangeInput from './RangeInput';
 import MonthSelect from './MonthSelect';
+import { MainItemsProps } from '../../App.types';
 
-const Parameters = (props) => {
+const Parameters: React.FC<MainItemsProps> = (props) => {
     const [capacity, setCapacity] = useState('5000');
     const [area, setArea] = useState('5');
     const [wind, setWind] = useState('3');
+    const [month, setMonth] = useState('1');
+
+    const { state, setState } = props;
+
+    const submitButton = () => {
+        setState({
+            ...state,
+            wind: parseFloat(wind),
+            area: parseFloat(area),
+            capacity: parseFloat(capacity),
+            month: parseInt(month),
+        });
+    };
 
     return (
         <Container>
             <TopDownContainer height="100%" style={{ width: '60%' }}>
                 <TitleText>Parametry</TitleText>
                 <TopDownContainer alignment="space-around" height="80%">
-                    <MonthSelect />
+                    <MonthSelect setState={setMonth} variable={state} />
                     <RangeInput
                         className={'capacity param'}
                         min={1000}
@@ -41,7 +55,7 @@ const Parameters = (props) => {
                         text={'Średnia prędkość wiatru: #VALUE#m/s'}
                         variable={wind}
                     />
-                    <input type="submit" value="Ustaw" />
+                    <input type="submit" value="Ustaw" onClick={submitButton} />
                 </TopDownContainer>
             </TopDownContainer>
         </Container>

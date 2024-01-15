@@ -5,7 +5,11 @@ const MonthSelect = (props) => {
     return (
         <TopDownContainer>
             <div>Miesiąc:</div>
-            <select className="month">
+            <select
+                className="month"
+                onChange={(e) => {
+                    props.setState(e.target.value);
+                }}>
                 <option value="1">styczeń</option>
                 <option value="2">luty</option>
                 <option value="3">marzec</option>

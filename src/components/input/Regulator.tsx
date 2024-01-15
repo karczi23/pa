@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, TitleText, TopDownContainer } from '../structure/Container';
 import './css/Regulator.css';
 import RangeInput from './RangeInput';
+import { MainItemsProps } from '../../App.types';
 
-const Regulator = (props) => {
+const Regulator: React.FC<MainItemsProps> = (props) => {
     const [temperature, setTemperature] = useState('25');
+
+    const { state, setState } = props;
+
+    const submitButton = () => {
+        setState({
+            ...state,
+            temperature: temperature,
+        });
+    };
 
     return (
         <Container>
@@ -21,7 +31,7 @@ const Regulator = (props) => {
                         variable={temperature}
                     />
                 </TopDownContainer>
-                <input type="submit" value="Ustaw" />
+                <input type="submit" value="Ustaw" onClick={submitButton} />
             </TopDownContainer>
         </Container>
     );

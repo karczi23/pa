@@ -4,8 +4,9 @@ import Bar from './Bar';
 import './css/chart.css';
 import { ColorContext } from '../../context/ColorContext';
 import { ChartLegendContainer, ChartTextContainer, Container } from '../structure/Container';
+import { MainItemsProps } from '../../App.types';
 
-const Chart = (props) => {
+const Chart: React.FC<MainItemsProps> = (props) => {
     const [isHovered, setHovered] = useState(false);
     const [temperature, setTemperature] = useState(0);
     const [position, setPosition] = useState(0);
@@ -65,9 +66,7 @@ const Chart = (props) => {
                             className="chartAreaUnhovered chartArea border-bottom border-left border-right border-radius"
                             style={{
                                 backgroundImage: `linear-gradient(to right, ${colors.join(',')})`,
-                            }}>
-                            a
-                        </div>
+                            }}></div>
                         <div style={{ display: 'flex' }}>
                             <ChartLegendContainer textAlignment="left">
                                 59 minut temu
