@@ -11,6 +11,7 @@ import { Header } from './components/structure/Header';
 import { GridContainer, TopDownContainer } from './components/structure/Container';
 import {
     Calculator,
+    collectiveData,
     convectionData,
     heatData,
     radiationData,
@@ -40,8 +41,6 @@ function App() {
         setState({ ...state, waterTemperature: data.slice(-1)[0] });
     }, [data]);
 
-    console.log(state);
-
     return (
         <ChartContext.Provider value={data}>
             <ColorContext.Provider value={colors}>
@@ -54,11 +53,16 @@ function App() {
                         <Timer state={state} setState={setData} calculate={calculate} />
                     </GridContainer>
                     <TopDownContainer style={{ alignItems: 'center' }}>
-                        <LineChart data={vaporizationData} label="Parowanie" />
-                        <LineChart data={convectionData} label="Konwekcja" />
-                        <LineChart data={radiationData} label="Promieniowanie" />
-                        <LineChart data={heatData} label="Energia słoneczna" />
-                        <LineChart data={usageData} label="Moc grzałki" />
+                        <LineChart data={vaporizationData} label="Parowanie" yLabel="[W/M^2]" />
+                        <LineChart data={convectionData} label="Konwekcja" yLabel="[W/M^2]" />
+                        <LineChart data={radiationData} label="Promieniowanie" yLabel="[W/M^2]" />
+                        <LineChart data={heatData} label="Energia słoneczna" yLabel="[W/M^2]" />
+                        <LineChart data={usageData} label="Moc grzałki" yLabel="[W]" />
+                        <LineChart
+                            data={collectiveData}
+                            label="Moc potrzebna do utrzymania temperatury"
+                            yLabel="[W]"
+                        />
                     </TopDownContainer>
                 </div>
             </ColorContext.Provider>

@@ -32,6 +32,14 @@ const LineChart = (props) => {
                             display: false,
                         },
                     },
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: props.yLabel,
+                            },
+                        },
+                    },
                     responsive: true,
                     maintainAspectRatio: false,
                 }}

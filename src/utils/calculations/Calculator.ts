@@ -7,7 +7,7 @@ export const convectionData = [];
 export const radiationData = [];
 export const vaporizationData = [];
 export const heatData = [];
-export const collectiveDataPerSquareMeter = [];
+export const collectiveData = [];
 export const usageData = [];
 
 const Calculator = (state) => {
@@ -16,10 +16,10 @@ const Calculator = (state) => {
     radiationData.length = 0;
     vaporizationData.length = 0;
     heatData.length = 0;
-    collectiveDataPerSquareMeter.length = 0;
+    collectiveData.length = 0;
     usageData.length = 0;
     const ambientTemperature = getAmbientTemperature(state.month);
-    const wantedTemperature = state.temperature;
+    const wantedTemperature = parseFloat(state.temperature);
 
     for (let i = 0; i < 60; ++i) {
         const waterTemperature = waterTemperatureList.slice(-1)[0];
@@ -36,7 +36,7 @@ const Calculator = (state) => {
         vaporizationData.push(vaporization * state.area);
         heatData.push(heat * state.area);
         const usage = convection + thermalRadiation + vaporization - heat;
-        collectiveDataPerSquareMeter.push(usage);
+        collectiveData.push(usage * state.area);
 
         if (wantedTemperature > waterTemperature) {
             const usedPowerPerSquareMeter = getHeaterPower(usage) - usage;
@@ -70,9 +70,10 @@ const Calculator = (state) => {
 };
 
 const getHeaterPower = (usage: number) => {
-    if (usage > 2000) return 4000;
-    if (usage > 1000) return 2000;
-    if (usage > 500) return 1000;
+    if (usage > 3200) return 6000;
+    if (usage > 1600) return 4000;
+    if (usage > 800) return 2000;
+    if (usage > 400) return 1000;
     else return 500;
 };
 
